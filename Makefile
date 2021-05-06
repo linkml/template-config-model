@@ -2,15 +2,15 @@
 # Model documentation and schema directory
 # ----------------------------------------
 SRC_DIR = model
-PKG_DIR = {model_py_name}
+PKG_DIR = template_config_model
 SCHEMA_DIR = $(SRC_DIR)/schema
 MODEL_DOCS_DIR = $(SRC_DIR)/docs
 SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
 SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
 
-SCHEMA_NAME = {root_schema}
+SCHEMA_NAME = config_model
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-PKG_TGTS = {generate_targets}
+PKG_TGTS = jsonld_context json_schema
 TGTS = docs python $(PKG_TGTS)
 
 # Targets by PKG_TGT
@@ -67,13 +67,13 @@ clean:
 # SQUEAKY_CLEAN: remove all of the final targets to make sure we don't leave old artifacts around
 # ---------------------------------------
 squeaky-clean: uninstall clean $(patsubst %,squeaky-clean-%,$(PKG_TGTS))
-	find docs/*  ! -name 'README.*' -exec rm -rf {{}} +
-	find $(PKG_DIR)/model/schema  ! -name 'README.*' -type f -exec rm -f {{}} +
-	find $(PKG_DIR) -name "*.py" ! -name "__init__.py" ! -name "linkml_files.py" -exec rm -f {{}} +
+	find docs/*  ! -name 'README.*' -exec rm -rf {} +
+	find $(PKG_DIR)/model/schema  ! -name 'README.*' -type f -exec rm -f {} +
+	find $(PKG_DIR) -name "*.py" ! -name "__init__.py" ! -name "linkml_files.py" -exec rm -f {} +
 	cd config
 
 squeaky-clean-%: clean
-	find $(PKG_DIR)/$* ! -name 'README.*' ! -name $*  -type f -exec rm -f {{}} +
+	find $(PKG_DIR)/$* ! -name 'README.*' ! -name $*  -type f -exec rm -f {} +
 
 # ---------------------------------------
 # T: List files to generate

@@ -1,13 +1,12 @@
-model_name: linkml-example-model
-model_py_name: linkml_example_model
-root_schema: example
+model_name: template-config-model
+root_schema: config_model
 
 model_organization: linkml
-model_author: Jane Author
-model_author_email: janea@example.org
-model_synopsis: An example of a LinkML model
+model_author: Harold Solbrig
+model_author_email: solbrig@jhu.edu
+model_synopsis: Configuration parameters for LinkML model generation
 model_description: |-
-  A simple example of a LinkML model
+  The parameters used to create and generate a new model derived from the LinkML Model Template
 
 # Trove Classifiers (https://pypi.org/classifiers/) -- copied to setup.cfg only if not already present
 classifiers:
@@ -15,7 +14,7 @@ classifiers:
     - "Environment :: Console"
     - "Intended Audience :: Developers"
     - "Intended Audience :: Science/Research"
-    - "Intended Audience :: Healthcare Industry"
+    - "Intended Audience :: Information Technology"
     - "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"
     - "Programming Language :: Python :: 3 :: Only"
     - "Programming Language :: Python :: 3.7"
@@ -34,5 +33,5 @@ keywords: [linkml, LOD, Modeling, Linked open data, model]
 #                  owl -- OWL representation of model schema
 #                  rdf -- LinkML Model definition in RDF
 #                  shex -- LinkML model definition in ShEx
-generate: [graphql, json, jsonld_context, json_schema, rdf, shex]
+generate: [jsonld_context, json_schema]
 

@@ -1,0 +1,84 @@
+{
+   "$id": "https://linkml.org/linkml_config_model",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "definitions": {
+      "Config": {
+         "additionalProperties": false,
+         "description": "Configuration parameters for linkml model template",
+         "properties": {
+            "classifiers": {
+               "description": "Trove classifiers for PyPI",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "generate": {
+               "description": "The set of components to generate",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "keywords": {
+               "description": "A list of keywords for PyPI",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "model_author": {
+               "description": "The primary author of the model",
+               "type": "string"
+            },
+            "model_author_email": {
+               "description": "The email address of the model author",
+               "type": "string"
+            },
+            "model_description": {
+               "description": "A more detailed description of the model",
+               "type": "string"
+            },
+            "model_name": {
+               "description": "The repository name of the model",
+               "type": "string"
+            },
+            "model_organization": {
+               "description": "The github repository organization",
+               "type": "string"
+            },
+            "model_py_name": {
+               "description": "The Python equivalent of the model name",
+               "type": "string"
+            },
+            "model_synopsis": {
+               "description": "A short description of the model",
+               "type": "string"
+            },
+            "model_url": {
+               "description": "URL of model documentation",
+               "type": "string"
+            },
+            "root_schema": {
+               "description": "The name of the root schema file (sans \".yaml\")",
+               "type": "string"
+            }
+         },
+         "required": [
+            "root_schema",
+            "model_name",
+            "model_organization",
+            "model_author",
+            "model_author_email",
+            "model_synopsis",
+            "generate"
+         ],
+         "title": "Config",
+         "type": "object"
+      }
+   },
+   "properties": {},
+   "title": "config_model",
+   "type": "object"
+}
+

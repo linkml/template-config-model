@@ -1,0 +1,19 @@
+{
+   "_comments": "Auto generated from config_model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2021-05-06 14:05\n    Schema: config_model\n    \n    id: https://linkml.org/linkml_config_model\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "conf": "https://linkml.org/linkml_config/",
+      "linkml": "https://w3id.org/linkml/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "@vocab": "https://linkml.org/linkml_config/",
+      "generate": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "model_name": "@id"
+   }
+}
+

@@ -3,29 +3,25 @@ import keyword
 import os
 import sys
 from argparse import ArgumentParser
-from dataclasses import dataclass
-from io import StringIO
-from typing import Dict, Optional, List
+from typing import Optional, List
 from warnings import warn
 
-import yaml
 from hbreader import hbread
 from jsonasobj import as_dict
 from linkml_runtime.loaders import yaml_loader
-from linkml_runtime.utils.yamlutils import DupCheckYamlLoader
 
-from config.config_model import Config, Component
+from config.config_model import Config
 
 CWD = os.path.dirname(__file__)
 SETUP_BASE = os.path.abspath(os.path.join('..', CWD))
 MODEL_ROOT = os.path.abspath(os.path.join(SETUP_BASE, '..'))
-DEFAULT_CONF_FILE = os.path.join(SETUP_BASE, 'CONFIG.yaml')
+DEFAULT_CONF_FILE = os.path.join(SETUP_BASE, '../model/CONFIG.yaml')
 
 TEMPLATES_DIR = os.path.join(SETUP_BASE, 'templates')
 ACTIONS_TEMPLATE_DIR = os.path.join(TEMPLATES_DIR, '.github', 'workflows')
 MAKEFILE_TEMPLATE = os.path.join(TEMPLATES_DIR, 'Makefile')
 
-MKDOCS_YAML = os.path.join(MODEL_ROOT, 'mkdocs.yaml')
+MKDOCS_YAML = os.path.join(MODEL_ROOT, 'mkdocs.yml')
 SETUP_CFG = os.path.join(MODEL_ROOT, 'setup.cfg')
 GITHUB_WORKFLOWS_DIR = os.path.join(MODEL_ROOT, '.github', 'workflows')
 MAKEFILE = os.path.join(MODEL_ROOT, 'Makefile')
@@ -113,7 +109,7 @@ def build_httpd_rules(config: Config, hard_reset: bool):
 
 def build_mkdocs_yaml(config: Config, hard_reset: bool):
     if hard_reset or not os.path.exists(MKDOCS_YAML):
-        mkdocs_yaml = hbread(os.path.join(TEMPLATES_DIR, 'mkdocs.yaml'))
+        mkdocs_yml = hbread(os.path.join(TEMPLATES_DIR, 'mkdocs.yml'))
         mkdocs_yaml = mkdocs_yaml.format(**(as_dict(config)))
         with open(MKDOCS_YAML, 'w') as f:
             f.write(mkdocs_yaml)
@@ -152,7 +148,9 @@ def genargs() -> ArgumentParser:
     :return: parser
     """
     parser = ArgumentParser(description="Configure a LinkML model repository")
-    parser.add_argument("-c", "--conffile", help="Configuration file location", default=DEFAULT_CONF_FILE,
+    parser.add_argument("-c", "--conffile",
+                        help="Configuration file location (default: model/CONFIG.yaml)",
+                        default=DEFAULT_CONF_FILE,
                         type=argparse.FileType('r'))
     parser.add_argument("--reset", help="Hard reset -- regenerate all files from scratch", action="store_true")
     return parser
