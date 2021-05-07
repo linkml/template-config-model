@@ -63,7 +63,7 @@ classes:
         required: true
 
       model_description:
-        description: A more detailed description of the model
+        description: A detailed description of the model
         notes: Same as model synopsis
 
       model_url:

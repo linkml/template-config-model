@@ -1,5 +1,5 @@
 # Auto generated from config_model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-05-07 14:59
+# Generation date: 2021-05-07 20:36
 # Schema: config_model
 #
 # id: https://linkml.org/linkml_config_model
@@ -9,7 +9,7 @@
 import dataclasses
 import sys
 import re
-from jsonasobj import JsonObj
+from jsonasobj2 import JsonObj
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
 
