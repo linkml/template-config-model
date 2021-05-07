@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Class: Config - Configuration parameters for LinkML model generation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Class: Config";
+    var mkdocs_page_input_path = "Config.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Configuration parameters for LinkML model generation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../home/">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../credits/">Credits</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Configuration parameters for LinkML model generation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Class: Config</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="class-config">Class: Config</h1>
+<p>Configuration parameters for linkml model template</p>
+<p>URI: <a href="https://linkml.org/linkml_config/Config">conf:Config</a></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Config&#124;root_schema:string;model_name:string;model_py_name:string%20%3F;model_organization:string;model_author:string;model_author_email:string;model_synopsis:string;model_description:string%20%3F;model_url:string%20%3F;classifiers:string%20*;keywords:string%20*;generate:component%20%2B]" /></p>
+<h2 id="attributes">Attributes</h2>
+<h3 id="own">Own</h3>
+<ul>
+<li><a href="../config__classifiers/">➞classifiers</a>  <sub>0..*</sub><ul>
+<li>Description: Trove classifiers for PyPI</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__generate/">➞generate</a>  <sub>1..*</sub><ul>
+<li>Description: The set of components to generate</li>
+<li>range: </li>
+</ul>
+</li>
+<li><a href="../config__keywords/">➞keywords</a>  <sub>0..*</sub><ul>
+<li>Description: A list of keywords for PyPI</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_author/">➞model_author</a>  <sub>REQ</sub><ul>
+<li>Description: The primary author of the model</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_author_email/">➞model_author_email</a>  <sub>REQ</sub><ul>
+<li>Description: The email address of the model author</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_description/">➞model_description</a>  <sub>OPT</sub><ul>
+<li>Description: A more detailed description of the model</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_name/">➞model_name</a>  <sub>REQ</sub><ul>
+<li>Description: The repository name of the model</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_organization/">➞model_organization</a>  <sub>REQ</sub><ul>
+<li>Description: The github repository organization</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_py_name/">➞model_py_name</a>  <sub>OPT</sub><ul>
+<li>Description: The Python equivalent of the model name</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_synopsis/">➞model_synopsis</a>  <sub>REQ</sub><ul>
+<li>Description: A short description of the model</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_url/">➞model_url</a>  <sub>OPT</sub><ul>
+<li>Description: URL of model documentation</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__root_schema/">➞root_schema</a>  <sub>REQ</sub><ul>
+<li>Description: The name of the root schema file (sans ".yaml")</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
