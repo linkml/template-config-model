@@ -49,7 +49,7 @@ jobs:
     - name: Check updated content
       run: |
         find template_config_model -name __pycache__ -type d -prune -exec rm -rf '{}' '+'
-        git add --force docs linkml_model
+        git add --force docs template_config_model
         if [[ ! -z $(git status -s .) ]]
         then
           git config --local user.email "action@github.com"

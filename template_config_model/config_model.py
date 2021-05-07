@@ -1,5 +1,5 @@
 # Auto generated from config_model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-05-06 14:05
+# Generation date: 2021-05-07 09:35
 # Schema: config_model
 #
 # id: https://linkml.org/linkml_config_model

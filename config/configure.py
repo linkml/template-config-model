@@ -107,12 +107,12 @@ def build_setup_cfg(config: Config, hard_reset: bool):
 def build_httpd_rules(config: Config, hard_reset: bool):
     pass
 
-def build_mkdocs_yaml(config: Config, hard_reset: bool):
+def build_mkdocs_yml(config: Config, hard_reset: bool):
     if hard_reset or not os.path.exists(MKDOCS_YAML):
         mkdocs_yml = hbread(os.path.join(TEMPLATES_DIR, 'mkdocs.yml'))
-        mkdocs_yaml = mkdocs_yaml.format(**(as_dict(config)))
+        mkdocs_yml = mkdocs_yml.format(**(as_dict(config)))
         with open(MKDOCS_YAML, 'w') as f:
-            f.write(mkdocs_yaml)
+            f.write(mkdocs_yml)
         print(f"{MKDOCS_YAML} written")
 
 
@@ -138,7 +138,7 @@ def proc_conf_file(conf_file_location, hard_reset: bool) -> int:
     build_makefile(config, hard_reset)
     build_setup_cfg(config, hard_reset)
     build_httpd_rules(config, hard_reset)
-    build_mkdocs_yaml(config, hard_reset)
+    build_mkdocs_yml(config, hard_reset)
     return 0
 
 

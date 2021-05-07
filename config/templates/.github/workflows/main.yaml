@@ -49,7 +49,7 @@ jobs:
     - name: Check updated content
       run: |
         find {model_py_name} -name __pycache__ -type d -prune -exec rm -rf '{{}}' '+'
-        git add --force docs linkml_model
+        git add --force docs {model_py_name}
         if [[ ! -z $(git status -s .) ]]
         then
           git config --local user.email "action@github.com"
