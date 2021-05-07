@@ -1,0 +1,10 @@
+CHANGES
+=======
+
+* Update documentation
+* Updating generated outputs
+* Automatically generated requirements.txt and requirements-dev.txt
+* Issue in main.yaml -- no dev requirements
+* Tweaks to follow model-template updates
+* Inital drop
+* Initial commit
