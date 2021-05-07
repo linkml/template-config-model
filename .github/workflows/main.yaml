@@ -22,11 +22,9 @@ jobs:
         pip install pipenv-to-requirements
         pipenv_to_requirements
         pip install -r requirements.txt
-        pip install -r requirements-dev.txt
 
     - name: Run make file
       run: |
-        pip install pipx
         make
 
     - name: Run unit tests over output
