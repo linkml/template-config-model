@@ -4,12 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
-rdflib = "~=5.0.0"
 linkml-runtime = ">=0.1.6"
-linkml-model = { git = "https://github.com/linkml/linkml-model@runtime_split" }
-jsonasobj = {  git = "https://github.com/hsolbrig/jsonasobj" }
-hbreader = "*"
+linkml-model = ">=0.1.0.dev1"
 
 [dev-packages]
 

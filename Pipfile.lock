@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "93f01aeb13cc0c033a0e4b111771dd47d42a7500cfbaaec73b2429c4782c9ca1"
+            "sha256": "42ab913f6f38503e31e403e10be9656a09daebf3912a5144a8cefae5a8d33537"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -63,7 +63,7 @@
                 "sha256:9a6e76c9d1afc1b977374a5dc430a1ebb0ea0488205546d4678d6e31cc5f6801",
                 "sha256:d2c132f8ba6276d794c66224c3297cec25c8079d0a4cf019c061611e0a3b94fa"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==0.9.1"
         },
         "idna": {
@@ -82,20 +82,34 @@
             "version": "==0.6.0"
         },
         "jsonasobj": {
-            "git": "https://github.com/hsolbrig/jsonasobj",
-            "ref": "ea2684fdbf8a170a8e4013a4d179e860d3da5c57"
+            "hashes": [
+                "sha256:b9e329dc1ceaae7cf5d5b214684a0b100e0dad0be6d5bbabac281ec35ddeca65",
+                "sha256:d52e0544a54a08f6ea3f77fa3387271e3648655e0eace2f21e825c26370e44a2"
+            ],
+            "version": "==1.3.1"
+        },
+        "jsonasobj2": {
+            "hashes": [
+                "sha256:1bdb7d07455eeae4cb3794087bfe7a5c14ab9bffe80db780842cab662e4e82a7",
+                "sha256:8add734525ec6d4d570c2056df38131418c0610100591a0853014a054850dcdb"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==1.0.3"
         },
         "linkml-model": {
-            "git": "https://github.com/linkml/linkml-model",
-            "ref": "44af890faea2903d497328241299580e7cb47f30"
+            "hashes": [
+                "sha256:8e91096d28620b2d15a076652aea18da6fb0b7603be8f9280144a06fac2f55fa"
+            ],
+            "index": "pypi",
+            "version": "==0.1.0.dev1"
         },
         "linkml-runtime": {
             "hashes": [
-                "sha256:3d91fcd4ad5365ad1aa90c640b4a4d99aee5a095485569a083d5a540b4d5bc8d",
-                "sha256:57b8c9c34e9f1e5e068f94ee4672693b7cb291110df2e4fe56ca17b75a66dc2a"
+                "sha256:095980e72417fb93e6f575eb76c70640a9c5f5a127a372ec5828bdd98bb7042e",
+                "sha256:10cf01c0e71db50cd0e313a693139c9e029a3a8ec658c96fb165b9da951aa21c"
             ],
             "index": "pypi",
-            "version": "==1.0.0"
+            "version": "==1.0.1"
         },
         "lxml": {
             "hashes": [
@@ -170,6 +184,12 @@
             ],
             "version": "==2.0.3"
         },
+        "pyldmod": {
+            "hashes": [
+                "sha256:afe7515a4c2b53bbff436c93af128599b4f52791cc71e34baecb7662c694feed"
+            ],
+            "version": "==2.0.5"
+        },
         "pyparsing": {
             "hashes": [
                 "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
@@ -218,7 +238,6 @@
                 "sha256:78149dd49d385efec3b3adfbd61c87afaf1281c30d3fcaf1b323b34f603fb155",
                 "sha256:88208ea971a87886d60ae2b1a4b2cdc263527af0454c422118d43fe64b357877"
             ],
-            "index": "pypi",
             "version": "==5.0.0"
         },
         "rdflib-jsonld": {
@@ -239,7 +258,7 @@
                 "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804",
                 "sha256:c210084e36a42ae6b9219e00e48287def368a26d03a048ddad7bfee44f75871e"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==2.25.1"
         },
         "shexjsg": {
