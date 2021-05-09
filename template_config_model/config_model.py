@@ -1,5 +1,5 @@
 # Auto generated from config_model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-05-07 20:36
+# Generation date: 2021-05-09 22:13
 # Schema: config_model
 #
 # id: https://linkml.org/linkml_config_model
@@ -83,42 +83,38 @@ class Config(YAMLRoot):
     keywords: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.model_name is None:
+        if self._is_empty(self.model_name):
             raise ValueError("model_name must be supplied")
         if not isinstance(self.model_name, ConfigModelName):
             self.model_name = ConfigModelName(self.model_name)
 
-        if self.root_schema is None:
+        if self._is_empty(self.root_schema):
             raise ValueError("root_schema must be supplied")
         if not isinstance(self.root_schema, str):
             self.root_schema = str(self.root_schema)
 
-        if self.model_organization is None:
+        if self._is_empty(self.model_organization):
             raise ValueError("model_organization must be supplied")
         if not isinstance(self.model_organization, str):
             self.model_organization = str(self.model_organization)
 
-        if self.model_author is None:
+        if self._is_empty(self.model_author):
             raise ValueError("model_author must be supplied")
         if not isinstance(self.model_author, str):
             self.model_author = str(self.model_author)
 
-        if self.model_author_email is None:
+        if self._is_empty(self.model_author_email):
             raise ValueError("model_author_email must be supplied")
         if not isinstance(self.model_author_email, str):
             self.model_author_email = str(self.model_author_email)
 
-        if self.model_synopsis is None:
+        if self._is_empty(self.model_synopsis):
             raise ValueError("model_synopsis must be supplied")
         if not isinstance(self.model_synopsis, str):
             self.model_synopsis = str(self.model_synopsis)
 
-        if self.generate is None:
+        if self._is_empty(self.generate):
             raise ValueError("generate must be supplied")
-        elif not isinstance(self.generate, list):
-            self.generate = [self.generate]
-        elif len(self.generate) == 0:
-            raise ValueError(f"generate must be a non-empty list")
         self.generate = [v if isinstance(v, Component) else Component(v) for v in self.generate]
 
         if self.model_py_name is not None and not isinstance(self.model_py_name, str):
@@ -130,16 +126,8 @@ class Config(YAMLRoot):
         if self.model_url is not None and not isinstance(self.model_url, str):
             self.model_url = str(self.model_url)
 
-        if self.classifiers is None:
-            self.classifiers = []
-        if not isinstance(self.classifiers, list):
-            self.classifiers = [self.classifiers]
         self.classifiers = [v if isinstance(v, str) else str(v) for v in self.classifiers]
 
-        if self.keywords is None:
-            self.keywords = []
-        if not isinstance(self.keywords, list):
-            self.keywords = [self.keywords]
         self.keywords = [v if isinstance(v, str) else str(v) for v in self.keywords]
 
         super().__post_init__(**kwargs)
