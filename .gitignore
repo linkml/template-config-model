@@ -1,10 +1,5 @@
-# Elements that are built using Make
-/target/
-/docs/
-/linkml_model/
-pipx_bin/
-site/
-venv/
+# Make artifacts
+env.lock
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
