@@ -29,7 +29,7 @@ PKG_T_SCHEMA = $(PKG_T_MODEL)/schema
 
 # Global generation options
 GEN_OPTS = --log_level WARNING
-ENV = export PIPENV_VENV_IN_PROJECT=true && export PIPENV_PIPFILE=config/Pipfile
+ENV = export PIPENV_VENV_IN_PROJECT=true && export PIPENV_PIPFILE=config/Pipfile && export PIPENV_IGNORE_VIRTUALENVS=1
 RUN = $(ENV) && pipenv run
 
 # ----------------------------------------
@@ -49,6 +49,15 @@ config/env.lock:
 
 uninstall:
 	rm -f config/env.lock
+	$(ENV) && pipenv --rm
+
+
+# ---------------------------------------
+# Test runner
+# ----------------------------------------
+test:
+	pipenv install --dev
+	pipenv run python -m unittest
 
 
 # ---------------------------------------
@@ -134,7 +143,7 @@ $(PKG_T_PYTHON)/%.py: target/python/%.py install
 	cp $< $@
 
 target/python/%.py: $(SCHEMA_DIR)/%.yaml  tdir-python install
-	$(RUN) gen-python $(GEN_OPTS) --genmeta --no-slots --no-mergeimports $< > $@
+	$(RUN) gen-python $(GEN_OPTS) --no-slots --no-mergeimports $< > $@
 
 # ---------------------------------------
 # GRAPHQL Source

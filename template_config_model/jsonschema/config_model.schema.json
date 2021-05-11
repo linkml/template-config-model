@@ -51,6 +51,10 @@
                "description": "The Python equivalent of the model name",
                "type": "string"
             },
+            "model_root_class": {
+               "description": "Default class to load yaml and other instances into",
+               "type": "string"
+            },
             "model_synopsis": {
                "description": "A short description of the model",
                "type": "string"
@@ -66,6 +70,7 @@
          },
          "required": [
             "root_schema",
+            "model_root_class",
             "model_name",
             "model_organization",
             "model_author",

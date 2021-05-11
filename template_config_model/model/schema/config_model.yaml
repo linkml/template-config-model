@@ -37,6 +37,11 @@ classes:
         description: The name of the root schema file (sans ".yaml")
         required: true
 
+      model_root_class:
+        description: Default class to load yaml and other instances into
+        required: true
+        comments: Remember that model names are CamelCased
+
       model_name:
         description: The repository name of the model
         comments: Typically in the form of {topic}-model
@@ -97,6 +102,8 @@ enums:
         description: Emit JSON-LD contexts for model instance to RDF transformations
       json_schema:
         description: Emit JSON Schema rendering of the model
+      model:
+        description: Include a copy of the model schema in the distribution
       owl:
         description: Emit OWL representation of model schema
       rdf:

@@ -1,5 +1,5 @@
 # Auto generated from config_model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-05-09 22:13
+# Generation date: 2021-05-11 11:16
 # Schema: config_model
 #
 # id: https://linkml.org/linkml_config_model
@@ -12,6 +12,7 @@ import re
 from jsonasobj2 import JsonObj
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
+from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
 
 from linkml_runtime.utils.slot import Slot
 from linkml_runtime.utils.metamodelcore import empty_list, empty_dict, bnode
@@ -71,6 +72,7 @@ class Config(YAMLRoot):
 
     model_name: Union[str, ConfigModelName] = None
     root_schema: str = None
+    model_root_class: str = None
     model_organization: str = None
     model_author: str = None
     model_author_email: str = None
@@ -92,6 +94,11 @@ class Config(YAMLRoot):
             raise ValueError("root_schema must be supplied")
         if not isinstance(self.root_schema, str):
             self.root_schema = str(self.root_schema)
+
+        if self._is_empty(self.model_root_class):
+            raise ValueError("model_root_class must be supplied")
+        if not isinstance(self.model_root_class, str):
+            self.model_root_class = str(self.model_root_class)
 
         if self._is_empty(self.model_organization):
             raise ValueError("model_organization must be supplied")
@@ -115,6 +122,8 @@ class Config(YAMLRoot):
 
         if self._is_empty(self.generate):
             raise ValueError("generate must be supplied")
+        if not isinstance(self.generate, list):
+            self.generate = [self.generate]
         self.generate = [v if isinstance(v, Component) else Component(v) for v in self.generate]
 
         if self.model_py_name is not None and not isinstance(self.model_py_name, str):
@@ -126,8 +135,12 @@ class Config(YAMLRoot):
         if self.model_url is not None and not isinstance(self.model_url, str):
             self.model_url = str(self.model_url)
 
+        if not isinstance(self.classifiers, list):
+            self.classifiers = [self.classifiers]
         self.classifiers = [v if isinstance(v, str) else str(v) for v in self.classifiers]
 
+        if not isinstance(self.keywords, list):
+            self.keywords = [self.keywords]
         self.keywords = [v if isinstance(v, str) else str(v) for v in self.keywords]
 
         super().__post_init__(**kwargs)
@@ -146,6 +159,8 @@ class Component(EnumDefinitionImpl):
                                                    description="Emit JSON-LD contexts for model instance to RDF transformations")
     json_schema = PermissibleValue(text="json_schema",
                                              description="Emit JSON Schema rendering of the model")
+    model = PermissibleValue(text="model",
+                                 description="Include a copy of the model schema in the distribution")
     owl = PermissibleValue(text="owl",
                              description="Emit OWL representation of model schema")
     rdf = PermissibleValue(text="rdf",

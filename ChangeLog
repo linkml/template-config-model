@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+* Add linkml-model to requirements
+* Include the setup boilerplate
+* Updating generated outputs
+* Update config\_model.yaml
+* Updating generated outputs
 * Update documentation
 * Updating generated outputs
 * Automatically generated requirements.txt and requirements-dev.txt

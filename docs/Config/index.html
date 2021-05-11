@@ -94,7 +94,7 @@
                 <h1 id="class-config">Class: Config</h1>
 <p>Configuration parameters for linkml model template</p>
 <p>URI: <a href="https://linkml.org/linkml_config/Config">conf:Config</a></p>
-<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Config&#124;root_schema:string;model_name:string;model_py_name:string%20%3F;model_organization:string;model_author:string;model_author_email:string;model_synopsis:string;model_description:string%20%3F;model_url:string%20%3F;classifiers:string%20*;keywords:string%20*;generate:component%20%2B]" /></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Config&#124;root_schema:string;model_root_class:string;model_name:string;model_py_name:string%20%3F;model_organization:string;model_author:string;model_author_email:string;model_synopsis:string;model_description:string%20%3F;model_url:string%20%3F;classifiers:string%20*;keywords:string%20*;generate:component%20%2B]" /></p>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
@@ -140,6 +140,11 @@
 </li>
 <li><a href="../config__model_py_name/">➞model_py_name</a>  <sub>OPT</sub><ul>
 <li>Description: The Python equivalent of the model name</li>
+<li>range: <a href="../String/">String</a></li>
+</ul>
+</li>
+<li><a href="../config__model_root_class/">➞model_root_class</a>  <sub>REQ</sub><ul>
+<li>Description: Default class to load yaml and other instances into</li>
 <li>range: <a href="../String/">String</a></li>
 </ul>
 </li>

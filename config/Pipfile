@@ -4,10 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-linkml = {ref = "linkml_runtime", git = "https://github.com/linkml/linkml"}
-jsonasobj = {git = "https://github.com/hsolbrig/jsonasobj"}
-linkml-model = {ref = "runtime_split", git = "https://github.com/linkml/linkml-model"}
-pyld = {git = "https://github.com/hsolbrig/pyld"}
+linkml = ">=0.1.1.dev1"
+linkml-model = ">=0.1.1.dev1"
+jsonasobj2 = "~=1.0, >=1.0.3"
+pyldmod = "*"
 mkdocs = "*"
 
 [dev-packages]
