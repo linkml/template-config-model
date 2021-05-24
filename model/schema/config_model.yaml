@@ -14,7 +14,6 @@ default_range: string
 default_curi_maps:
   - semweb_context
 
-
 types:
   string:
     uri: xsd:string
